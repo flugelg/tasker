@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const TaskItem = ({todo}) => {
+  const [taskComplete, setTaskComplete] = useState();
   const {tasks, due, complete} = todo;
 
   function handleClick(){
@@ -11,6 +12,7 @@ const TaskItem = ({todo}) => {
       todo.complete = false;
     }
     updateTask();
+    setTaskComplete(todo.complete) //updates dom for if complete or not
   }
 
   function updateTask(){
@@ -32,7 +34,7 @@ const TaskItem = ({todo}) => {
       <td id="task" className={todo.complete ? "strike" : ""}>{tasks}</td>
       <td id="due" className={todo.complete ? "strike" : ""}>{due}</td>
       <td>
-        <input id="completeCheck" type="checkbox" onChange={handleClick}/>
+        <input id="completeCheck" type="checkbox" onChange={handleClick} defaultChecked={complete}/> {/* defaultChecked keeps marked when refreshed*/}
       </td>
       <td>
         <button className="btn btn-delete">
