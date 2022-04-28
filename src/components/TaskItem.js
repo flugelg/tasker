@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DeleteTask from './DeleteTask';
 
 const TaskItem = ({todo}) => {
   const [taskComplete, setTaskComplete] = useState();
