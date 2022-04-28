@@ -4,8 +4,6 @@ import CreateTask from './CreateTask';
 
 const TaskList = () => {
   const[todoList, setTodoList] = useState([]);
-  const[updateDom, setUpdateDom] = useState(); //ask if better way
-  let updates=0;
 
   useEffect(() =>{
     fetch('http://localhost:3000/list')
@@ -33,7 +31,7 @@ const TaskList = () => {
           }
         </tbody>
       </table>
-      <CreateTask todoList={todoList} setTodoList={setTodoList}/>
+      <CreateTask/>
     </div>
   )
 }

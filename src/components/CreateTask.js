@@ -1,13 +1,12 @@
 import React, {useState} from 'react'
 
-const CreateTask = ({todoList, setTodoList}) => {
+const CreateTask = () => {
     const [addTodo, setAddTodo] = useState({
         id: "",
         tasks: "",
         due: "",
         complete: false
     });
-    let newTodoList = [...todoList]
 
     const handleChange = (event) => {
         setAddTodo({ ...addTodo, [event.target.name]: event.target.value });
