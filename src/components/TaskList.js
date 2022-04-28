@@ -14,7 +14,6 @@ const TaskList = () => {
     return <TaskItem key={todo.id} todo={todo}/>
   })
 
-
   return (
     <table className="task-table">
       <thead>
