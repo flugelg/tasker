@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const TaskItem = ({todo}) => {
   const [taskComplete, setTaskComplete] = useState();
-  const {tasks, due, complete} = todo;
+  const {tasks, due, complete} = todo; //deconstructs task
 
   function handleClick(){
     if(todo.complete == false){
