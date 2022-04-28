@@ -8,7 +8,7 @@ const TaskList = () => {
     fetch('http://localhost:3000/list')
       .then(res => res.json())
       .then(data => setTodoList(data))
-  }, []);
+  }, [todoList]);
 
   const displayTodo = todoList.map((todo) =>{
     return <TaskItem key={todo.id} todo={todo}/>
