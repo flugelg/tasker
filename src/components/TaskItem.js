@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DeleteTask from './DeleteTask';
 
-const TaskItem = ({todo, deleteTasks}) => {
+const TaskItem = ({todo, todoList, setTodoList}) => {
   const [taskComplete, setTaskComplete] = useState();
   const {tasks, due, complete} = todo; //deconstructs task
 
@@ -38,7 +38,7 @@ const TaskItem = ({todo, deleteTasks}) => {
         <input id="completeCheck" type="checkbox" onChange={handleClick} defaultChecked={complete}/> {/* defaultChecked keeps marked when refreshed*/}
       </td>
       <td>
-          <DeleteTask todo={todo} deleteTasks={deleteTasks}/>
+          <DeleteTask todo={todo} todoList={todoList} setTodoList={setTodoList}/>
       </td>
     </tr>
   )

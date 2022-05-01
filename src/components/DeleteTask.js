@@ -1,13 +1,14 @@
 import React from 'react'
 
-const DeleteTask = ({todo, deleteTasks}) => {
+const DeleteTask = ({todo, todoList, setTodoList}) => {
 
     function deleteTask(){
         console.log("deleted", todo)
+
         fetch("http://localhost:3000/list/" + todo.id, {
           method: "DELETE",
           })
-          .then(deleteTasks())
+          .then(setTodoList(todoList.filter(task => task !== todo))) //sets state without the deleted task
     }
     
     return (

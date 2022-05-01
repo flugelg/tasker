@@ -31,6 +31,12 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
         })
         .then(res => res.json())
         .then(data => setTodoList([...todoList, data]))
+        .then(setAddTodo({
+            id: "",
+        tasks: "",
+        due: "",
+        complete: false
+        }))
         
     }
 
