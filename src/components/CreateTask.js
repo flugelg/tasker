@@ -37,13 +37,13 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
         due: "",
         complete: false
         }))
-        
+        document.getElementById("tasks-input").focus();   
     }
 
   return (
     <form id="formStyle" onSubmit={handleSubmit}>
         {/* create an input element */}
-          <input type="text" name="tasks" placeholder="task to add" value={addTodo.tasks} onChange={handleChange}/>
+          <input  id="tasks-input" type="text" name="tasks" placeholder="task to add" value={addTodo.tasks} onChange={handleChange} autoFocus/>
           <input type="text" name="due" placeholder="due date of task" value={addTodo.due} onChange={handleChange}/>
           <button id='add-button'>Add Task</button>
     </form>
