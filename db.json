@@ -1,33 +1,9 @@
 {
   "list": [
     {
-      "id": 0,
-      "tasks": "homework",
-      "due": "Today",
-      "complete": false
-    },
-    {
       "id": 1,
-      "tasks": "2",
-      "due": "2",
-      "complete": false
-    },
-    {
-      "id": 2,
-      "tasks": "3",
-      "due": "3",
-      "complete": false
-    },
-    {
-      "id": 3,
-      "tasks": "4",
-      "due": "4",
-      "complete": false
-    },
-    {
-      "id": 4,
-      "tasks": "5",
-      "due": "5",
+      "tasks": "1",
+      "due": "1",
       "complete": false
     }
   ]

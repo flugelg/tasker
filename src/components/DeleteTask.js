@@ -1,12 +1,13 @@
 import React from 'react'
 
-const DeleteItem = ({todo}) => {
+const DeleteTask = ({todo, deleteTasks}) => {
 
     function deleteTask(){
         console.log("deleted", todo)
         fetch("http://localhost:3000/list/" + todo.id, {
           method: "DELETE",
           })
+          .then(deleteTasks())
     }
     
     return (
@@ -16,4 +17,4 @@ const DeleteItem = ({todo}) => {
     );
 }
 
-export default DeleteItem
+export default DeleteTask

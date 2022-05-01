@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-const CreateTask = () => {
+const CreateTask = ({updateTasks, setTodoList, todoList}) => {
+    const [newAdded, setNewAdded] = useState({})
     const [addTodo, setAddTodo] = useState({
         id: "",
         tasks: "",
@@ -20,7 +21,6 @@ const CreateTask = () => {
         if( addTodo.due === ""){
             return console.log("Please add a due date")
         }
-        console.log(addTodo);
 
         fetch("http://localhost:3000/list", {
           method: "POST",
@@ -30,13 +30,15 @@ const CreateTask = () => {
           body: JSON.stringify(addTodo),
         })
         .then(res => res.json())
+        .then(data => setTodoList([...todoList, data]))
+        
     }
 
   return (
     <form id="formStyle" onSubmit={handleSubmit}>
         {/* create an input element */}
-          <input type="text" name="tasks" placeholder="task to add" onChange={handleChange}/>
-          <input type="text" name="due" placeholder="due date of task" onChange={handleChange}/>
+          <input type="text" name="tasks" placeholder="task to add" value={addTodo.tasks} onChange={handleChange}/>
+          <input type="text" name="due" placeholder="due date of task" value={addTodo.due} onChange={handleChange}/>
           <button id='add-button'>Add Task</button>
     </form>
   )

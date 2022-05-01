@@ -9,11 +9,17 @@ const TaskList = () => {
     fetch('http://localhost:3000/list')
       .then(res => res.json())
       .then(data => setTodoList(data))
-  }, []);
+  }, []); //update dom when addNewTodos is called
 
   const displayTodo = todoList.map((todo) =>{
-    return <TaskItem key={todo.id} todo={todo}/>
+    return <TaskItem key={todo.id} todo={todo} deleteTasks={deleteTasks}/>
   })
+
+  function deleteTasks(id){
+    setTodoList([...todoList, ])
+    console.log("items deleted")
+  }
+  
 
   return (
     <div>
@@ -31,7 +37,7 @@ const TaskList = () => {
           }
         </tbody>
       </table>
-      <CreateTask/>
+      <CreateTask todoList={todoList} setTodoList={setTodoList}/>
     </div>
   )
 }
