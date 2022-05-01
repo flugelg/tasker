@@ -31,13 +31,14 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
         })
         .then(res => res.json())
         .then(data => setTodoList([...todoList, data]))
-        .then(setAddTodo({
+        .then(setAddTodo({ //clearing input elements
             id: "",
-        tasks: "",
-        due: "",
-        complete: false
-        }))
-        document.getElementById("tasks-input").focus();   
+            tasks: "",
+            due: "",
+            complete: false
+            }))
+        console.log("Added", addTodo)
+        document.getElementById("tasks-input").focus(); //focusing on input elements after re-render 
     }
 
   return (

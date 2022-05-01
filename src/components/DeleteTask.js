@@ -3,7 +3,7 @@ import React from 'react'
 const DeleteTask = ({todo, todoList, setTodoList}) => {
 
     function deleteTask(){
-        console.log("deleted", todo)
+        console.log("Deleted", todo)
 
         fetch("http://localhost:3000/list/" + todo.id, {
           method: "DELETE",
@@ -12,7 +12,7 @@ const DeleteTask = ({todo, todoList, setTodoList}) => {
     }
     
     return (
-        <button className="btn btn-delete" onClick={deleteTask}>
+        <button className="btn-delete" onClick={deleteTask}>
             <span>Remove</span>
         </button>
     );
