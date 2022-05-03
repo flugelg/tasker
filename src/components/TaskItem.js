@@ -18,6 +18,7 @@ const TaskItem = ({todo, todoList, setTodoList}) => {
 
   function updateTask(){
     console.log(todo.complete ? "Complete" : "Incomplete", todo)
+    
     let id = todo.id
     fetch(`http://localhost:3000/list/${id}`, {
         method: "PUT",
