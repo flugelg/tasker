@@ -18,7 +18,7 @@ const TaskItem = ({todo, todoList, setTodoList}) => {
 
   function updateTask(){
     console.log(todo.complete ? "Complete" : "Incomplete", todo)
-    
+
     let id = todo.id
     fetch(`http://localhost:3000/list/${id}`, {
         method: "PUT",
@@ -32,12 +32,12 @@ const TaskItem = ({todo, todoList, setTodoList}) => {
   }
 
   return (
-    <tr className={todo.complete ? "strike" : ""}>{/* if the task is complete put classname as strike, if its not complete have no class name */}
-      <td id="task">{tasks}</td>
-      <td id="due">{due}</td>
+    <tr>{/* if the task is complete put classname as strike, if its not complete have no class name */}
       <td>
         <input id="completeCheck" type="checkbox" onChange={handleClick} defaultChecked={complete}/> {/* defaultChecked keeps marked when refreshed*/}
       </td>
+      <td id="task" className={todo.complete ? "strike" : ""}>{tasks}</td>
+      <td id="due" className={todo.complete ? "strike" : ""}>{due}</td>
       <td>
           <DeleteTask todo={todo} todoList={todoList} setTodoList={setTodoList}/>
       </td>

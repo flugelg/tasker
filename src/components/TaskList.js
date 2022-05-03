@@ -3,26 +3,30 @@ import TaskItem from './TaskItem';
 import CreateTask from './CreateTask';
 
 const TaskList = () => {
-  const[todoList, setTodoList] = useState([]);
+  const[todoList, setTodoList] = useState([]); //setter function is setTodoList
 
   useEffect(() =>{
     fetch('http://localhost:3000/list')
-      .then(res => res.json())
-      .then(data => setTodoList(data))
-  }, []);
+      .then(res => res.json()) //parsing from json to js
+      .then(data => setTodoList(data)) //using the parsed data and setting the state of todoList
+  }, []); //dependancy is [], whatever is inside the useEffect is dependent on that.
+
+  if(todoList.length != 0){
+    document.querySelector(".task-table").style.visibility = "visible";
+  }
 
   const displayTodo = todoList.map((todo) =>{
-    return <TaskItem key={todo.id} todo={todo} todoList={todoList} setTodoList={setTodoList}/>
+    return <TaskItem key={todo.id} todo={todo} todoList={todoList} setTodoList={setTodoList}/> 
   })
 
   return (
-    <div>
+    <div className='content'>
       <table className="task-table">
         <thead>
           <tr>
+            <th scope="col">Complete</th>
             <th scope="col">Task</th>
             <th scope="col">Due Date</th>
-            <th scope="col">Complete</th>
           </tr>
         </thead>
         <tbody>
@@ -31,7 +35,7 @@ const TaskList = () => {
           }
         </tbody>
       </table>
-      <CreateTask todoList={todoList} setTodoList={setTodoList}/>
+      <CreateTask todoList={todoList} setTodoList={setTodoList}/> {/*props down to child component */}
     </div>
   )
 }

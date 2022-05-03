@@ -4,14 +4,6 @@
   color: white;
 }
 
-input[type=text] {
-  outline: none;
-  padding: 4px;
-  margin:10px 0;
-  border: 2px solid #eee;
-  border-radius: 10px;
-}
-
 #add-button{
   outline: none;
   padding: 4px;
@@ -28,7 +20,15 @@ input[type=text] {
 .task-table{
   margin-left: auto;
   margin-right: auto;
+  min-width: 400px;
+  visibility: hidden;
 }
+
+.task-table th,
+.task-table td {
+    padding: 12px 15px;
+}
+
 .task-data {
   border: 1px solid #999;
   padding: 0.5rem;
@@ -41,7 +41,7 @@ input[type=text] {
 
 @keyframes strike{
   0%   { width : 0; }
-  100% { width: 50%; }
+  100% { width: 103%; }
 }
 .strike {
   position: relative;
@@ -51,7 +51,7 @@ input[type=text] {
   content: ' ';
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 0%;
   width: 100%;
   height: 2px;
   background: rgb(255, 255, 255);
@@ -92,7 +92,6 @@ input[type=text] {
   box-shadow: inset 0 0 0 1px #CCD3D8;
 }
 
-
 /* Checked */
 
 [type=checkbox]:checked {
@@ -114,4 +113,31 @@ button{
 
 #formStyle input, #formStyle button{
   margin: 20px;
+}
+.btn-delete{
+  margin-left: 2em;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.btn-delete:hover{
+  background-color: red;
+}
+
+input[type=text] {
+  outline: none;
+  padding: 4px;
+  margin:10px 0;
+  border: 2px solid #eee;
+  border-radius: 10px;
+}
+
+input[type=text]:focus{
+  background-color: rgb(106, 106, 106);
+  color: black;
+}
+
+#logo{
+  width: 10em;
+  margin: 1em;
 }

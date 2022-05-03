@@ -22,6 +22,8 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
             return console.log("Please add a due date")
         }
 
+        document.querySelector(".task-table").style.visibility = "visible";
+  
         fetch("http://localhost:3000/list", {
           method: "POST",
           headers: {
@@ -37,6 +39,8 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
             due: "",
             complete: false
             }))
+        
+        
         console.log("Added", addTodo)
         document.getElementById("tasks-input").focus(); //focusing on input elements after re-render 
     }
