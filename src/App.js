@@ -6,8 +6,12 @@ import TaskList from './components/TaskList';
 function App() {
   return (
     <div>
-      <Header/>
-      <TaskList/>
+      <Route path="/head">
+        <Header/>
+      </Route>
+      <Route path="/home">
+        <TaskList/>
+      </Route>
     </div>
 
   );
