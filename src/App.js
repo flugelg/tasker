@@ -9,7 +9,7 @@ function App() {
       <Route path="/head">
         <Header/>
       </Route>
-      <Route path="/home">
+      <Route path="/">
         <TaskList/>
       </Route>
     </div>
