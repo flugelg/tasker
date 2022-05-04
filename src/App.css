@@ -146,7 +146,7 @@ input[type=text] {
 
 input[type=text]:focus{
   background-color: rgb(106, 106, 106);
-  color: black;
+  color: white;
 }
 
 #logo{
@@ -157,4 +157,12 @@ input[type=text]:focus{
 tr{
   padding: 0;
   margin: 0;
+}
+
+.error{
+  width: 75vw;
+  font-size: 100px;
+  margin: auto;
+  padding: 70px 0;
+  text-align: center;
 }

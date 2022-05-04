@@ -5,12 +5,6 @@
       "tasks": "PHASE 2",
       "due": "May 9",
       "complete": false
-    },
-    {
-      "id": 2,
-      "tasks": "thing",
-      "due": "xcf",
-      "complete": false
     }
   ]
 }
