@@ -5,8 +5,8 @@ const NavBar = () => {
     let navigate = useNavigate();
   return (
       <div>
-        <button onClick={() => navigate("/home")}>Home</button>
-        <button onClick={() => navigate("/about")}>About</button>
+        <button onClick={() => navigate("/")} className="nav-button">Home</button>
+        <button onClick={() => navigate("/about")} className="nav-button">About</button>
     </div>
   )
 }

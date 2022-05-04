@@ -10,10 +10,6 @@ const DeleteTask = ({todo, todoList, setTodoList}) => {
           })
           .then(setTodoList(todoList.filter(task => task !== todo))) //sets state without the deleted task
           .then(function(){
-              if(todoList.length==1){
-                  console.log("table turned invisible")
-                  document.querySelector(".task-table").style.visibility = "hidden";
-              }
           })
     }
     

@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Header from './components/Header';
 import TaskList from './components/TaskList';
 import About from './components/About';
-import WelcomePage from './components/WelcomePage';
 import NavBar from './components/NavBar';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
         <Header />
         <NavBar />
           <Routes>
-            <Route path="/" element={ <WelcomePage /> } />
             <Route path="/about" element={ <About /> } />
-            <Route path="/home" element={ <TaskList /> } />
+            <Route path="/" element={ <TaskList /> } />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
       </BrowserRouter>
     </div>

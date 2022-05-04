@@ -17,11 +17,23 @@
   color: rgb(37, 37, 37);
 }
 
+.nav-button{
+  outline: none;
+  padding: 4px;
+  margin:10px 0;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.nav-button:hover{
+  background-color: white;
+  color: rgb(37, 37, 37);
+}
+
 .task-table{
   margin-left: auto;
   margin-right: auto;
   min-width: 400px;
-  visibility: hidden;
 }
 
 .task-table th,
@@ -140,4 +152,9 @@ input[type=text]:focus{
 #logo{
   width: 10em;
   margin: 1em;
+}
+
+tr{
+  padding: 0;
+  margin: 0;
 }

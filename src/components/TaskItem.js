@@ -5,6 +5,7 @@ const TaskItem = ({todo, todoList, setTodoList}) => {
   const [taskComplete, setTaskComplete] = useState();
   const {tasks, due, complete} = todo; //deconstructs task
 
+
   function handleClick(){
     if(todo.complete == false){
       todo.complete = true;
@@ -32,7 +33,7 @@ const TaskItem = ({todo, todoList, setTodoList}) => {
   }
 
   return (
-    <tr>{/* if the task is complete put classname as strike, if its not complete have no class name */}
+    <tr className='task-row'>{/* if the task is complete put classname as strike, if its not complete have no class name */}
       <td>
         <input id="completeCheck" type="checkbox" onChange={handleClick} defaultChecked={complete}/> {/* defaultChecked keeps marked when refreshed*/}
       </td>

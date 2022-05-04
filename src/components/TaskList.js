@@ -11,10 +11,6 @@ const TaskList = () => {
       .then(data => setTodoList(data)) //using the parsed data and setting the state of todoList
   }, []); //dependancy is [], whatever is inside the useEffect is dependent on that.
 
-  if(todoList.length != 0){
-    document.querySelector(".task-table").style.visibility = "visible";
-  }
-
   const displayTodo = todoList.map((todo) =>{
     return <TaskItem key={todo.id} todo={todo} todoList={todoList} setTodoList={setTodoList}/> 
   })

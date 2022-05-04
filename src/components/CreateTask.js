@@ -22,8 +22,6 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
             return console.log("Please add a due date")
         }
 
-        document.querySelector(".task-table").style.visibility = "visible";
-  
         fetch("http://localhost:3000/list", {
           method: "POST",
           headers: {
