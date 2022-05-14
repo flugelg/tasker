@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import DeleteTask from './DeleteTask';
 
-const TaskItem = ({todo, todoList, setTodoList}) => {
+const TaskItem = ({handleDelete, todo}) => {
   const [taskComplete, setTaskComplete] = useState();
-  const {tasks, due, complete} = todo; //deconstructs task
-
+  const {tasks, due, complete} = todo; //deconstructs task. takes keys from object and assigns them as variables
 
   function handleClick(){
     if(todo.complete == false){
@@ -20,9 +19,8 @@ const TaskItem = ({todo, todoList, setTodoList}) => {
   function updateTask(){
     console.log(todo.complete ? "Complete" : "Incomplete", todo)
 
-    let id = todo.id
-    fetch(`http://localhost:3000/list/${id}`, {
-        method: "PUT",
+    fetch(`http://localhost:3000/list/${todo.id}`, {
+        method: "PATCH",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json"
@@ -33,14 +31,14 @@ const TaskItem = ({todo, todoList, setTodoList}) => {
   }
 
   return (
-    <tr className='task-row'>{/* if the task is complete put classname as strike, if its not complete have no class name */}
+    <tr className='task-row'>
       <td>
         <input id="completeCheck" type="checkbox" onChange={handleClick} defaultChecked={complete}/> {/* defaultChecked keeps marked when refreshed*/}
       </td>
-      <td id="task" className={todo.complete ? "strike" : ""}>{tasks}</td>
+      <td id="task" className={todo.complete ? "strike" : ""}>{tasks}</td>{/* if the task is complete put classname as strike, if its not complete have no class name */}
       <td id="due" className={todo.complete ? "strike" : ""}>{due}</td>
       <td>
-          <DeleteTask todo={todo} todoList={todoList} setTodoList={setTodoList}/>
+          <DeleteTask handleDelete={handleDelete} todo={todo}/>
       </td>
     </tr>
   )

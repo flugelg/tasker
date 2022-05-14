@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
-    let navigate = useNavigate();
+    let navigate = useNavigate(); 
   return (
       <div>
         <button onClick={() => navigate("/")} className="nav-button">Home</button>

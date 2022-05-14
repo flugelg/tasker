@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 
-const CreateTask = ({updateTasks, setTodoList, todoList}) => {
-    const [newAdded, setNewAdded] = useState({})
-    const [addTodo, setAddTodo] = useState({
+const CreateTask = ({ handleCreateTask }) => {
+    const [addTodo, setAddTodo] = useState({//rename
         id: "",
         tasks: "",
         due: "",
@@ -30,7 +29,7 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
           body: JSON.stringify(addTodo),
         })
         .then(res => res.json())
-        .then(data => setTodoList([...todoList, data]))
+        .then(data => handleCreateTask(data))
         .then(setAddTodo({ //clearing input elements
             id: "",
             tasks: "",
@@ -38,8 +37,6 @@ const CreateTask = ({updateTasks, setTodoList, todoList}) => {
             complete: false
             }))
         
-        
-        console.log("Added", addTodo)
         document.getElementById("tasks-input").focus(); //focusing on input elements after re-render 
     }
 
